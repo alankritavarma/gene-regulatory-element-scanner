@@ -66,6 +66,12 @@ if st.button("🔎 Scan sequence", use_container_width=False):
 
         result_df = pd.DataFrame(rows)
         st.dataframe(result_df, hide_index=True, use_container_width=True)
-        st.download_button
+        st.download_button(
             "⬇️ Download results as CSV",
             data=result_df.to_csv(index=False),
+            file_name="motif_results.csv",
+            mime="text/csv"
+        )
+
+st.markdown("---")
+st.caption("Educational motif scanner · Exact pattern matching · GC marker is simplified")
